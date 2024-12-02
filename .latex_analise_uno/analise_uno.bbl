@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{B81}
+A.~A. Bertossi.
+\newblock The edge hamiltonian path problem is np-complete.
+\newblock {\em Information Processing Letters}, 13:157--159, 1981.
+
+\bibitem{FSU93}
+A.~S. Fraenkel, E.~R. Scheinerman, and D.~Ullman.
+\newblock Undirected edge geography.
+\newblock {\em Theoretical Computer Science}, 112:371--381, 1993.
+
+\bibitem{GJT76}
+M.~R. Garey, D.~S. Johnson, and R.~E. Tarjan.
+\newblock The planar hamiltonian circuit is np-complete.
+\newblock {\em SIAM Journal of Computing}, 5:704--714, 1976.
+
+\end{thebibliography}

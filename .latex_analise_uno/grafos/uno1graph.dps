@@ -1,0 +1,407 @@
+%%BoundingBox: 30 719 243 807
+%%Title: uno1graph
+%%CreationDate: Sat Jan 9 17:9:14 2010
+%%Creator: tgif2tex version 2.05 (Original:  Tgif-4.1.42-QPL written by William Chia-Wei Cheng (bill.cheng@acm.org))
+%%ProducedBy: (unknown)
+%%Orientation: Portrait
+%%Pages: 1
+%%DocumentFonts: (atend)
+%%DocumentPaperSizes: a4
+%%EndComments
+%%BeginProlog
+
+/tgifdict 53 dict def
+tgifdict begin
+
+/tgifellipsedict 6 dict def
+tgifellipsedict /mtrx matrix put
+
+/TGEL % tgifellipse
+ { tgifellipsedict begin
+      /yrad exch def
+      /xrad exch def
+      /y exch def
+      /x exch def
+      /savematrix mtrx currentmatrix def
+      x y translate
+      xrad yrad scale
+      0 0 1 0 360 arc
+      savematrix setmatrix
+   end
+ } def
+
+/TGMAX
+ { exch dup 3 1 roll exch dup 3 1 roll gt { pop } { exch pop } ifelse
+ } def
+/TGMIN
+ { exch dup 3 1 roll exch dup 3 1 roll lt { pop } { exch pop } ifelse
+ } def
+/TGSW { stringwidth pop } def
+
+/bd { bind def } bind def
+
+/GS { gsave } bd
+/GR { grestore } bd
+/NP { newpath } bd
+/CP { closepath } bd
+/CHP { charpath } bd
+/CT { curveto } bd
+/L { lineto } bd
+/RL { rlineto } bd
+/M { moveto } bd
+/RM { rmoveto } bd
+/S { stroke } bd
+/F { fill } bd
+/TR { translate } bd
+/RO { rotate } bd
+/SC { scale } bd
+/MU { mul } bd
+/DI { div } bd
+/DU { dup } bd
+/NE { neg } bd
+/AD { add } bd
+/SU { sub } bd
+/PO { pop } bd
+/EX { exch } bd
+/CO { concat } bd
+/CL { clip } bd
+/EC { eoclip } bd
+/EF { eofill } bd
+/IM { image } bd
+/IMM { imagemask } bd
+/ARY { array } bd
+/SG { setgray } bd
+/RG { setrgbcolor } bd
+/SD { setdash } bd
+/W { setlinewidth } bd
+/SM { setmiterlimit } bd
+/SLC { setlinecap } bd
+/SLJ { setlinejoin } bd
+/SH { show } bd
+/FF { findfont } bd
+/MS { makefont setfont } bd
+/AR { arcto 4 {pop} repeat } bd
+/CURP { currentpoint } bd
+/FLAT { flattenpath strokepath clip newpath } bd
+/TGSM { tgiforigctm setmatrix } def
+/TGRM { savematrix setmatrix } def
+
+end
+
+%%EndProlog
+%!
+%%BoundingBox: 30 719 243 807
+%%BeginSetup
+%%PaperSize: a4
+%%BeginPaperSize: a4
+%%EndPaperSize
+%%EndSetup
+%%Page: 1 1
+
+%%PageBoundingBox: 28 716 246 808
+tgifdict begin
+/tgifsavedpage save def
+
+1 SM
+1 W
+
+0 SG
+
+72 0 MU 72 11.695 MU TR
+72 128 DI 100.000 MU 100 DI DU NE SC
+
+GS
+
+/tgiforigctm matrix currentmatrix def
+
+% OVAL
+0 SG
+NP 196 124 8 8 TGEL F
+GS
+   GS
+      NP 196 124 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 251 124 8 8 TGEL F
+GS
+   GS
+      NP 251 124 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 153 99 8 8 TGEL F
+GS
+   GS
+      NP 153 99 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 225 170 8 8 TGEL F
+GS
+   GS
+      NP 225 170 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 280 170 8 8 TGEL F
+GS
+   GS
+      NP 280 170 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 307 125 8 8 TGEL F
+GS
+   GS
+      NP 307 125 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 127 141 8 8 TGEL F
+GS
+   GS
+      NP 127 141 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 170 167 8 8 TGEL F
+GS
+   GS
+      NP 170 167 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 351 92 8 8 TGEL F
+GS
+   GS
+      NP 351 92 8 8 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      152 98 M
+      196 125 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      196 125 M
+      252 124 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      252 124 M
+      308 125 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      308 125 M
+      281 169 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      280 170 M
+      250 121 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      251 123 M
+      225 170 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      225 170 M
+      195 123 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      195 123 M
+      170 168 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      170 168 M
+      126 140 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      126 140 M
+      152 99 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      224 171 M
+      281 171 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      307 126 M
+      351 91 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      225 170 M
+      236.33 182.00 246.67 189.33 256.00 192.00 CT
+      265.33 194.67 274.33 195.17 283.00 193.50 CT
+      291.67 191.83 299.00 188.17 305.00 182.50 CT
+      311.00 176.83 314.67 170.67 316.00 164.00 CT
+      317.33 157.33 317.67 151.50 317.00 146.50 CT
+      316.33 141.50 313.33 134.33
+      308 125 CT
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      154 99 M
+      160.67 89.00 168.67 82.67 178.00 80.00 CT
+      187.33 77.33 196.33 76.33 205.00 77.00 CT
+      213.67 77.67 221.33 80.17 228.00 84.50 CT
+      234.67 88.83 239.67 94.00 243.00 100.00 CT
+      246.33 106.00 249.00 114.00
+      251 124 CT
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      151 98 M
+      136.33 97.33 125.67 98.67 119.00 102.00 CT
+      112.33 105.33 106.33 110.50 101.00 117.50 CT
+      95.67 124.50 92.67 132.00 92.00 140.00 CT
+      91.33 148.00 92.67 156.17 96.00 164.50 CT
+      99.33 172.83 105.17 180.33 113.50 187.00 CT
+      121.83 193.67 131.17 198.50 141.50 201.50 CT
+      151.83 204.50 161.67 205.67 171.00 205.00 CT
+      180.33 204.33 188.00 202.50 194.00 199.50 CT
+      200.00 196.50 205.00 193.17 209.00 189.50 CT
+      213.00 185.83 219.00 179.67
+      227 171 CT
+   TGSM
+   1 W
+   S
+GR
+
+
+
+
+
+
+
+
+
+
+
+GR
+tgifsavedpage restore
+end
+showpage
+%MatchingCreationDate: Sat Jan 9 17:9:14 2010

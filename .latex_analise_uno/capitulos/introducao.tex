@@ -1,0 +1,42 @@
+\section{Introdução}
+
+\hspace*{3em} Para essa análise nos restringiremos a analisar apenas o uno com uma pessoa, que iremos modelar como um grafo bipartido. Um grafo bipartido é um grafo cujos vértices podem ser divididos em dois conjuntos disjuntos, de modo que não há arestas entre vértices do mesmo conjunto.
+
+\hspace*{2em} Para isso iremos primeiro definir uma notação matemática para o jogo.
+
+\subsection{Notação}
+    \subsubsection*{Cartas}
+        \hspace*{3em} No jogo cada carta é representada por um par ordenado $(c, t)$, onde $c$ é a cor da carta e $t$ é o tipo da carta. Onde $c \in \{0, 1, 2, 3\}$ e $t \in \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}$, onde $0$ é a cor vermelha, $1$ é a cor amarela, $2$ é a cor verde e $3$ é a cor azul. E $0$ é a carta 1, $1$ é a carta 2, $2$ é a carta 3, ..., onde $9$ é a carta de bloqueio, $10$ é a carta pular, $11$ é a carta inverter, e $12$ é a carta +2.
+
+    \subsubsection*{Jogada}
+        \hspace*{3em} Em uma determinada jogada, o jogador pode jogar uma carta que seja igual à carta que está na mesa, ou seja, que tenha a mesma cor ou o mesmo tipo. Caso contrário, ele pode comprar uma carta do monte e, se a carta comprada puder ser jogada, ele pode jogá-la.
+
+    \subsubsection*{Descarte}
+        \hspace*{3em} Quando um jogador descarta uma carta, ele deve colocá-la no topo da pilha de descarte. A carta no topo da pilha de descarte determina as regras para a próxima jogada. Se a pilha de descarte estiver vazia, qualquer carta pode ser jogada para iniciar a pilha.
+
+        \hspace*{2em} Em outras palavras, uma carta $x_i = (c, t)$ pode ser jogada se a carta $x_{i-1} = (c', t')$ no topo da pilha de descarte satisfizer uma das seguintes condições:
+        \begin{itemize}
+            \item $(c = c') \lor  (t = t')$
+        \end{itemize}
+
+        \subsubsection*{Regras}
+            \hspace*{3em} Vamos definir as regras do jogo usando a seguinte notação matemática:
+            
+            \begin{itemize}
+                \item Seja $C$ o conjunto de todas as cartas, onde $C = \{(c, t) \mid c \in \{0, 1, 2, 3\}, t \in \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}\}$.
+                \item Seja $D$ a pilha de descarte, onde $D = [d_1, d_2, \ldots, d_n]$ e $d_i \in C$ para todo $i$.
+                \item Seja $M$ o monte de compra, onde $M = [m_1, m_2, \ldots, m_k]$ e $m_i \in C$ para todo $i$.
+                \item Seja $P$ o conjunto de jogadores, onde $P = \{p_1, p_2, \ldots, p_j\}$.
+                \item Seja $H(p)$ a mão de cartas do jogador $p$, onde $H(p) \subseteq C$.
+            \end{itemize}
+
+            \hspace*{3em} As regras do jogo podem ser descritas da seguinte forma:
+            
+            \begin{enumerate}
+                        \item Um jogador $p \in P$ pode jogar uma carta $c \in H(p)$ se $c = (c_1, t_1)$ e a carta no topo da pilha de descarte $d_n = (c_2, t_2)$, \textbf{se uma carta corresponde à outra}, em outra palabres, satisfaz uma das seguintes condições:
+                        \begin{equation}
+                            c_1 = c_2 \lor t_1 = t_2
+                        \end{equation}
+                \item Se o jogador não puder jogar uma carta, ele deve comprar uma carta do monte $M$. Se a carta comprada puder ser jogada, ele pode jogá-la imediatamente. 
+                \item Quando um jogador joga uma carta, essa carta é adicionada ao topo da pilha de descarte $D$.
+            \end{enumerate}

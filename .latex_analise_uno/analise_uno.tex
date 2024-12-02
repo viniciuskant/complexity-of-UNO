@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{color}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    citecolor=black,
+}
+
+\title{Análise da Complexidade do jogo UNO}
+\author{
+    Henrique Parede de Souza - \\
+    Pedro Brasil Barroso - \\
+    Pedro Damasceno Vasconcellos -  \\
+    Vinicius Patriarca Miranda Miguel - RA260721
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand{\contentsname}{Sumário}
+\tableofcontents
+\newpage
+
+\input{capitulos/introducao.tex}
+
+\input{capitulos/modelo.tex}
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}
