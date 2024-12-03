@@ -308,9 +308,6 @@ INPUT grafos/triangle_gadget.tps
 INPUT ./grafos/possible_tours.tps
 INPUT ./grafos/possible_tours.tps
 INPUT grafos/possible_tours.tps
-INPUT ./analise_uno.bbl
-INPUT ./analise_uno.bbl
-INPUT analise_uno.bbl
 INPUT analise_uno.aux
 INPUT ./analise_uno.out
 INPUT ./analise_uno.out

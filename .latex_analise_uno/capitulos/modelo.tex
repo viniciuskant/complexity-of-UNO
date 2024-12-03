@@ -36,10 +36,16 @@
 \hspace*{2em} Aqui investigamos algumas propriedades básicas dos grafos UNO-1. Em grafos UNO-1, todos os vértices cujas cartas correspondentes possuem a mesma cor ou o mesmo número formam uma clique\footnote{Uma clique em um grafo é um subconjunto de seus vértices tal que todos os vértices do subconjunto são adjacentes entre si. Em outras palavras, é um grafo completo induzido pelo subconjunto de vértices.}, em outra palavras, todos os vértices de mesma cor ou número estão conectados.
 
 
-\hspace*{2em} O grafo de linha \( L(G) \) de um grafo dado \( G \) é o grafo cujos vértices são as arestas de \( G \), e \(\{e,e'\} \in E(L(G))\) para \( e,e' \in V(L(G)) = E(G) \) se e somente se \( e \) e \( e' \) compartilham um vértice em \( G \).
+\hspace*{2em} O \textit{grafo de linha} \( L(G) \) de um grafo dado \( G \) é definido como o grafo cujos vértices correspondem às arestas de \( G \). Formalmente:
+
+\begin{itemize}
+    \item Os vértices de \( L(G) \) são as arestas de \( G \), ou seja, \( V(L(G)) = E(G) \).
+    \item Duas arestas \( e, e' \in E(G) \) formam uma aresta \( \{e, e'\} \in E(L(G)) \) se, e somente se, \( e \) e \( e' \) compartilham um vértice em \( G \).
+\end{itemize}
+
 
 \begin{center}
-\begin{tikzpicture}[scale=1.5, transform shape]
+\begin{tikzpicture}[scale=1, transform shape]
     % Grafo G
     \node[draw, circle, fill=black, inner sep=2pt, label=left:{$v_1$}] (v1) at (0, 1) {};
     \node[draw, circle, fill=black, inner sep=2pt, label=right:{$v_2$}] (v2) at (1, 1) {};
@@ -47,10 +53,10 @@
     \node[draw, circle, fill=black, inner sep=2pt, label=below:{$v_4$}] (v4) at (-0.5, 0) {};
     \draw (v1) -- node[above, scale=0.8, text=red] {$e_1$} (v2);
     \draw (v2) -- node[right, scale=0.8, text=red] {$e_2$} (v3);
-    \draw (v3) -- node[below, scale=0.8, text=red] {$e_3$} (v1);
+    \draw (v3) -- node[right, scale=0.8, text=red] {$e_3$} (v1);
     \draw (v4) -- node[left, scale=0.8, text=red] {$e_4$} (v1);
 
-    \node at (0.5, -1) {Grafo \(G\)};
+    \node at (0.25, -1) {Grafo \(G\)};
 
     % grafo l(g)
     \node[draw, circle, fill=red, inner sep=2pt, label=left:{$e_1$}] (e1) at (3, 1) {};
@@ -63,22 +69,43 @@
     \draw (e2) -- node[right, scale=0.8, text=black] {$v_2$} (e3);
     \draw (e3) -- node[below, scale=0.8, text=black] {$v_3$} (e4);
 
-    \node at (3.5, -1) {Grafo \(L(G)\)};
+    \node at (3.25, -1) {Grafo \(L(G)\)};
 \end{tikzpicture}
 \end{center}
 
 foi colocado rótulos para facilitar a visualização, mas não é necessários para a definição do grafo.
 
 
-\hspace*{2em} Como uma carta de uno é um par ordenado de uma cor e um número, as cartas de UNO correspondem ao conjunto de arestas de um grafo bipartido, cujos conjuntos partites são cores e números. Assim, um grafo UNO-1 representa a adjacência de arestas (correspondentes às cartas) de um grafo bipartido. Esses argumentos levam ao seguinte fato.
+\hspace*{2em} Como uma carta de UNO é definida como um par ordenado de uma \textbf{cor} \( c \) e um \textbf{número} \( n \), podemos modelar o conjunto de todas as cartas de UNO como um grafo bipartido \( G \), onde os dois conjuntos partites representam as \textbf{cores} e os \textbf{números} disponíveis no baralho.
+
+\begin{itemize}
+    \item Cada carta \( (c, n) \) pode ser interpretada como uma \textbf{aresta} que conecta um vértice do conjunto de cores ao vértice correspondente no conjunto de números.
+    \item O grafo bipartido \( G \) então possui como vértices todos os elementos possíveis de cores e números, e suas arestas representam todas as combinações válidas de cor e número.
+\end{itemize}
+
+\hspace*{2em} Um grafo UNO-1 é, portanto, um modelo para representar a adjacência entre essas arestas (as cartas) no grafo bipartido \( G \). Isso significa que duas cartas são adjacentes no grafo UNO-1 se elas compartilham a mesma cor ou o mesmo número. Em outras palavras:
+
+\begin{itemize}
+    \item O grafo UNO-1 não é o próprio grafo bipartido \( G \), mas sim o \textbf{grafo de linha} \( L(G) \) do grafo bipartido.
+    \item No grafo de linha \( L(G) \), os vértices correspondem às arestas do grafo bipartido \( G \), e duas arestas de \( G \) são conectadas por uma aresta em \( L(G) \) se compartilharem um vértice em \( G \).
+\end{itemize}
+
+\hspace*{2em} Essa construção nos permite mapear o problema de encontrar uma sequência válida de jogadas no UNO-1 para o problema de encontrar um caminho hamiltoniano no grafo UNO-1. Assim, o problema se traduz em encontrar uma ordem para visitar todas as cartas (vértices do grafo UNO-1), respeitando as regras de adjacência do UNO (mesma cor ou número).
+
+\vspace{1em}
+\hspace*{2em} Esses argumentos estabelecem o seguinte fato fundamental:
+
+\begin{center}
+    \textbf{Fato:} Um grafo é UNO-1 se, e somente se, ele é um grafo de linha de um grafo bipartido.
+\end{center}
 
 \begin{tcolorbox}[colback=white, colframe=black!70, title=Lema 1]
-se \( g \) é um grafo bipartido, então \( l(g) \) é um grafo de linha.
+Se \( G \) é um grafo bipartido, então \( L(G) \) é um grafo de linha.
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white, colframe=black!70, title=Prova do Lema 1]
 \begin{proof}
-seja \( g = (v, e) \) um grafo bipartido com partições \( V_1 \) e \( V_2 \). O grafo de linha \( L(G) \) é definido como o grafo cujos vértices são as arestas de \( G \) e duas arestas em \( L(G) \) são adjacentes se e somente se compartilham um vértice em \( G \).
+seja \( G = (V, E) \) um grafo bipartido com partições \( V_1 \) e \( V_2 \). O grafo de linha \( L(G) \) é definido como o grafo cujos vértices são as arestas de \( G \) e duas arestas em \( L(G) \) são adjacentes se e somente se compartilham um vértice em \( G \).
 
 como \( g \) é bipartido, cada aresta \( e \in E \) conecta um vértice de \( V_1 \) a um vértice de \( V_2 \). Portanto, duas arestas \( e_1 \) e \( e_2 \) em \( G \) compartilham um vértice se e somente se uma extremidade de \( e_1 \) está em \( V_1 \) e a outra extremidade está em \( V_2 \), e o mesmo vale para \( e_2 \).
 
@@ -88,50 +115,20 @@ assim, \( l(g) \) é um grafo onde os vértices representam as arestas de \( G \
 
 \begin{tcolorbox}[colback=white, colframe=black!70, title=Corolário 1]
 \begin{corollary}
-se \( g \) é um grafo bipartido, então o problema do Caminho Hamiltoniano em \( L(G) \) é NP-completo.
+Se \( G \) é um grafo bipartido, então o problema do Caminho Hamiltoniano em \( L(G) \) é NP-completo.
 \end{corollary}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white, colframe=black!70, title=Prova do Corolário 1]
 \begin{proof}
-segue diretamente do teorema 1, que afirma que o problema do Caminho Hamiltoniano para grafos de linha de grafos bipartidos é NP-completo.
+segue diretamente do Teorema 1, que afirma que o problema do Caminho Hamiltoniano para grafos de linha de grafos bipartidos é NP-completo.
 \end{proof}
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[colback=white, colframe=black!70, title=Teorema 1]
-o problema do caminho hamiltoniano para grafos de linha de grafos bipartidos é NP-completo.
+O problema do caminho hamiltoniano para grafos de linha de grafos bipartidos é NP-completo.
 \end{tcolorbox}
-
-portanto, como corolário deste teorema, vemos que UNO é um problema difícil mesmo para um único jogador.
-
-\begin{tcolorbox}[colback=white, colframe=black!70, title=Teorema 2]
-uno-1 é np-completo.
-\end{tcolorbox}
-\textbf{\color{red} melhor essa prova... ponto IMPORTANTE DO TRABALHO}
-
-\textbf{\color{red} {não sei se vale a pena colOCAR AS PROVAS EM ANEXOS}}
-
-para fins de completude, fornecemos uma prova direta e concisa do Teorema 2. Em contraste, a prova em \cite{FSU93} depende adicionalmente de \cite{B81}.
-
-\begin{proof}[demostração]
-um grafo cúbico é um grafo no qual todo vértice tem grau 3. Reduzimos do problema do Caminho Hamiltoniano para grafos cúbicos (HP-C), que é conhecido por ser NP-completo \cite{GJT76}.
-
-considere uma instância \( g \) de hp-c. transformamos \( G \) em um grafo \( G' \), onde:
-\[ v(g') = \{(x,e) \mid x \in v(g), e = \{x,y\} \in E(G)\} \]
-\[ e(g') = \{((x,e),(y,e)) \mid e = \{x,y\} \in E(G)\} \cup \{((x,e_i),(x,e_j)) \mid e_i \neq e_j\} \]
-
-essa transformação divide qualquer vértice \( x \in V(G) \) em três novos vértices \( (x,e_1), (x,e_2), (x,e_3) \) para formar uma clique (triângulo), enquanto cada aresta \( e_i \) (i=1,2,3) incidente a \( x \) torna-se incidente a um novo vértice \( (x,e_i) \). A \autoref{fig:uno1graph} ilustra este "gadget" de nó.
-
-
-em seguida, preparamos o conjunto de cartas \( C \) do jogador de Uno-1 como o conjunto \( V(G') \), onde a cor e o número de \( (x,e) \) são \( x \) e \( e \), respectivamente. Podemos facilmente confirmar que existe uma aresta \( e = (t,t') \) em \( G' \) se e somente se \( t \) e \( t' \) correspondem. Assim, \( G' \) é o grafo UNO-1 correspondente ao conjunto de cartas \( C \).
-
-
-agora basta mostrar que existe um caminho hamiltoniano em \( G \) se, e somente se, existe um caminho Hamiltoniano em \( G' \).
-\end{proof}
-
-
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 O problema do Caminho Hamiltoniano (HP-C) consiste em encontrar um caminho em um grafo que passe por todos os vértices exatamente uma vez. Este problema é bem conhecido por ser NP-completo em diversos tipos de grafos, e será o ponto de partida para a redução que será feita no caso do Uno-1, já que os probelmas são bem semelhante, já que queremos descartar todas as cartas exatamente uma vez.
 
@@ -165,9 +162,58 @@ Agora vamos mostrar como é feita a transformação do grafo \( G \) (um grafo c
 
 Depois de criar o grafo \( G' \), é necessário preparar o conjunto de \textit{cartas de Uno-1}, que é composto pelos vértices do grafo \( G' \). Cada carta de Uno-1 tem:
 \begin{itemize}
-    \item O \textbf{número} da carta que corresponde ao \textbf{x} do vértice \( (x, e) \).
-    \item A \textbf{cor} da carta que corresponde á aresta \textbf{e} ou seja, a cor é associada ao vértice original \( x \) de \( G \).
+    \item A \textbf{cor} da carta que corresponde ao \textbf{x} do vértice \( (x, e) \).
+    \item O \textbf{numero} da carta que corresponde á aresta \textbf{e}.
 \end{itemize}
+
+Para exemplificar essa construção, olhe o grafo da \autoref{fig:exemplografo}:
+
+\begin{center}
+    \begin{tikzpicture}[scale=1, transform shape]
+        % Transformação em G'
+        % v_{j-1}
+        \node[draw, circle, fill=blue, inner sep=2pt] (v1_e1) at (-1.5, -0.5) {};
+        \node[draw, circle, fill=blue, inner sep=2pt] (v1_e2) at (-1.5, -1.5) {};
+        \node[draw, circle, fill=blue, inner sep=2pt, label=above:{(azul, 1)}] (v1_e3) at (-0.5, -0.5) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e1) at (-2.25, 1.5) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e2) at (-2.5, -2.75) {};
+        \draw (v1_e1) -- (v1_e2) -- (v1_e3) -- cycle; % Triângulo de v_{j-1}
+        \draw (v1_e1) -- (v1_e3); % Aresta adicional no triângulo
+    
+        % v_j
+        \node[draw, circle, fill=green, inner sep=2pt, label=below:{(verde, 1)}] (v2_e3) at (0.5, -0.5) {};
+        \node[draw, circle, fill=green, inner sep=2pt, label=below right:{(verde, 3)}] (v2_e4) at (1.5, -1.5) {};
+        \node[draw, circle, fill=green, inner sep=2pt, label=above:{(verde, 2)}] (v2_e6) at (2.5, 0) {};
+        \node[draw, circle, fill=red, inner sep=2pt] (e4) at (0.75, -2.5) {};
+        \draw (v2_e3) -- (v2_e4) -- (v2_e6) -- cycle; % Triângulo de v_j
+        \draw (v2_e3) -- (v2_e6); % Aresta adicional no triângulo
+    
+        % v_{j+1}
+        \node[draw, circle, fill=yellow, inner sep=2pt, label=above:{(amarelo, 2)}] (v3_e6) at (3.5, 0.5) {};
+        \node[draw, circle, fill=yellow, inner sep=2pt] (v3_e7) at (4.5, -0.75) {};
+        \node[draw, circle, fill=yellow, inner sep=2pt] (v3_e8) at (5.0, 1) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e7) at (4.25, -2) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e8) at (6.25, 1) {};
+        \draw (v3_e6) -- (v3_e7) -- (v3_e8) -- cycle; % Triângulo de v_{j+1}
+        \draw (v3_e6) -- (v3_e8); % Aresta adicional no triângulo
+
+   
+        % Conexões entre vértices (v, e) e (y, e) (arestas compartilhadas)
+        \draw (v1_e3) -- (v2_e3); % Aresta compartilhada entre v_{j-1} e v_j
+        \draw (v2_e6) -- (v3_e6); % Aresta compartilhada entre v_j e v_{j+1}
+    
+        % Conexões específicas para as novas arestas
+        \draw (e4) -- (v2_e4);
+        \draw (e2) -- (v1_e2);
+        \draw (e1) -- (v1_e1);
+        \draw (e7) -- (v3_e7);
+        \draw (e8) -- (v3_e8);
+    
+        % Label
+        \node at (1, -3.5) {Uma possível interpretação de \(G'\) para facilitar o entendimento};
+    \end{tikzpicture}
+    \label{fig:exemplografo}
+\end{center}    
 
 Podemos confirmar facilmente que existe uma aresta \( e = (t, t') \) em \( G' \) se, e somente se, \( t \) e \( t' \) combinam, já que só existem duas possibilidades, para a aresta $e$, ou ela está em uma clique ou ela está ligando duas cliques. Caso ela pertença a mesma clique, isso siginica que elas possuem a mesmo número e se elas estão entre clique significa que elas possuema mesma cor. Dois vértices \( t, t' \) em \( G' \) combinam se eles representam cartas que podem ser jogadas consecutivamente no Uno-1, ou seja, compartilham ao menos um atributo (cor ou número). Em expreções matemáticas isso é garantido e expresso pelas seguintes condições:
 
@@ -183,82 +229,83 @@ Assim, \( G' \) é o grafo correspondente ao conjunto de cartas \( C \), onde ca
 
 Agora, iremos mostrar a relação entre os caminhos Hamiltonianos em \( G \) e \( G' \). Primeiro, suponha que existe um Caminho Hamiltoniano \( P = (v_{i_1}, \dots, v_{i_n}) \) em \( G \). Construímos um Caminho Hamiltoniano \( P' \) em \( G' \) com base em \( P \) da seguinte forma:
 
+\textbf{Se há um Caminho Hamiltoniano em \( G \), então há um Caminho Hamiltoniano em \( G' \):}
+\begin{itemize}
+    \item Se existe um caminho Hamiltoniano em \( G \), vamos construir um caminho Hamiltoniano correspondente em \( G' \).
+    \item Para cada aresta \( e = \{v_{i-1}, v_i\} \) no caminho Hamiltoniano \( P \) de \( G \), criamos uma sequência de vértices em \( G' \). A sequência de vértices será formada pelos vértices \( (v_{i-1}, e1), (v_i, e1), (v_i, e2), \\ (v_i, e3), (v_{i+1}, e2) \).
+    \item O caminho Hamiltoniano em \( G' \) é formado pela sequência dos vértices que correspondem a cada aresta de \( G \).
+\end{itemize}
 
 \begin{center}
     \begin{tikzpicture}[scale=1.25, transform shape]
         % Grafo G
-        \node[draw, circle, fill=blue!20, inner sep=2pt, label=left:{$v_{j-1}$}] (v1) at (-0.5, 1) {};
-        \node[draw, circle, fill=green!20, inner sep=2pt, label=right:{$v_j$}] (v2) at (1, 1) {};
-        \node[draw, circle, fill=yellow!20, inner sep=2pt, label=above:{$v_{j+1}$}] (v3) at (2.5, 2) {};
+        \node[draw, circle, fill=blue, inner sep=2pt, label=left:{$v_{j-1}$}] (v1) at (-0.5, 1) {};
+        \node[draw, circle, fill=green, inner sep=2pt, label=right:{$v_j$}] (v2) at (1, 1) {};
+        \node[draw, circle, fill=yellow, inner sep=2pt, label=above:{$v_{j+1}$}] (v3) at (2.5, 2) {};
         \node[draw, circle, fill=black, inner sep=0pt] (v4) at (-1.5, 0) {};
         \node[draw, circle, fill=black, inner sep=0pt] (v5) at (-1.5, 2) {};
-        \node[draw, circle, fill=orange, inner sep=2pt, label=above:{$v_k$}] (v6) at (0, 0) {};
+        \node[draw, circle, fill=red, inner sep=2pt, label=above:{$v_k$}] (v6) at (0, 0) {};
         \node[draw, circle, fill=black, inner sep=0pt] (v8) at (4, 1.9) {};
         \node[draw, circle, fill=black, inner sep=0pt] (v9) at (2.75, 0.8) {};
-        \draw (v1) -- node[above, scale=0.8, text=red] {$e_1$} (v2);
-        \draw (v2) -- node[right, scale=0.8, text=red] {$e_2$} (v3);
-        \draw (v2) -- node[right, scale=0.8, text=red] {$e_3$} (v6);
-        \draw (v4) -- node[left, scale=0.8] {$e_4$} (v1);
-        \draw (v5) -- node[left, scale=0.8] {$e_5$} (v1);
-        \draw (v3) -- node[above, scale=0.8] {$e_6$} (v8);
-        \draw (v3) -- node[left, scale=0.8] {$e_7$} (v9);
+        \draw[line width=0.7mm] (v1) -- node[above, scale=0.8] {$e_1$} (v2);
+        \draw[line width=0.7mm] (v2) -- node[right, scale=0.8] {$e_2$} (v3);
+        \draw (v2) -- node[right, scale=0.8] {$e_3$} (v6);
+        \draw (v4) --  (v1);
+        \draw (v5) --  (v1);
+        \draw (v3) -- (v8);
+        \draw (v3) --  (v9);
     
         \node at (1, -1) {Grafo \(G\)};
     \end{tikzpicture}
-    \end{center}
+\end{center}
     
-    \begin{center}
-        \begin{tikzpicture}[scale=1, transform shape]
-            % Transformação em G'
-            % v_{j-1}
-            \node[draw, circle, fill=blue!20, inner sep=2pt, label=left:{(v\(_{j-1}\), e\(_5\))}] (v1_e1) at (-1.5, -0.5) {};
-            \node[draw, circle, fill=blue!20, inner sep=2pt, label=below right:{(v\(_{j-1}\), e\(_4\))}] (v1_e2) at (-1.5, -1.5) {};
-            \node[draw, circle, fill=blue!20, inner sep=3pt, label=above:{\textbf{(v\(_{j-1}\), e\(_1\))}}] (v1_e3) at (-0.5, -0.5) {};
-            \node[draw, circle, fill=black, inner sep=0pt] (e1) at (-2.25, 1.5) {};
-            \node[draw, circle, fill=black, inner sep=0pt] (e2) at (-2.5, -2.75) {};
-            \draw (v1_e1) -- (v1_e2) -- (v1_e3) -- cycle; % Triângulo de v_{j-1}
-            \draw (v1_e1) -- (v1_e3); % Aresta adicional no triângulo
-        
-            % v_j
-            \node[draw, circle, fill=green!20, inner sep=3pt, label=below:{\textbf{(v\(_j\), e\(_1\))}}] (v2_e3) at (0.5, -0.5) {};
-            \node[draw, circle, fill=green!20, inner sep=3pt, label=below right:{\textbf{(v\(_j\), e\(_3\))}}] (v2_e4) at (1.5, -1.5) {};
-            \node[draw, circle, fill=green!20, inner sep=3pt, label=above:{\textbf{(v\(_j\), e\(_2\))}}] (v2_e6) at (2.5, 0) {};
-            \node[draw, circle, fill=orange, inner sep=2pt, label=below:{(v\(_k\), e\(_3\))}] (e4) at (0.75, -2.5) {};
-            \draw (v2_e3) -- (v2_e4) -- (v2_e6) -- cycle; % Triângulo de v_j
-            \draw (v2_e3) -- (v2_e6); % Aresta adicional no triângulo
-        
-            % v_{j+1}
-            \node[draw, circle, fill=yellow!20, inner sep=3pt, label=above:{\textbf{(v\(_{j+1}\), e\(_2\))}}] (v3_e6) at (3.5, 0.5) {};
-            \node[draw, circle, fill=yellow!20, inner sep=2pt, label=right:{(v\(_{j+1}\), e\(_7\))}] (v3_e7) at (4.5, -0.75) {};
-            \node[draw, circle, fill=yellow!20, inner sep=2pt, label=above:{(v\(_{j+1}\), e\(_6\))}] (v3_e8) at (5.0, 1) {};
-            \node[draw, circle, fill=black, inner sep=0pt] (e7) at (4.25, -2) {};
-            \node[draw, circle, fill=black, inner sep=0pt] (e8) at (6.25, 1) {};
-            \draw (v3_e6) -- (v3_e7) -- (v3_e8) -- cycle; % Triângulo de v_{j+1}
-            \draw (v3_e6) -- (v3_e8); % Aresta adicional no triângulo
-
-            % % v_k
-            % \node[draw, circle, fill=orange, inner sep=3pt, label=above:{\textbf{(v\(_k\), e\(_3\))}}] (vk_e3) at (0.75, 1) {};
-            % \draw (vk_e3) -- (v2_e3); % Aresta adicional no triângulo
-
-
-        
-            % Conexões entre vértices (v, e) e (y, e) (arestas compartilhadas)
-            \draw (v1_e3) -- (v2_e3); % Aresta compartilhada entre v_{j-1} e v_j
-            \draw (v2_e6) -- (v3_e6); % Aresta compartilhada entre v_j e v_{j+1}
-        
-            % Conexões específicas para as novas arestas
-            \draw (e2) -- node[left, scale=0.8] {e\(_4\)} (v1_e2);
-            \draw (e1) -- node[left, scale=0.8] {e\(_5\)} (v1_e1);
-            \draw (e4) -- node[left, scale=0.8] {e\(_3\)} (v2_e4);
-            \draw (e7) -- node[right, scale=0.8] {e\(_7\)} (v3_e7);
-            \draw (e8) -- node[below, scale=0.8] {e\(_6\)} (v3_e8);
-        
-            % Label
-            \node at (1, -3.5) {Transformação de \(v_{j-1}, v_j, v_{j+1}\) em \(G'\)};
-        \end{tikzpicture}
-    \end{center}
+\begin{center}
+    \begin{tikzpicture}[scale=1, transform shape]
+        % Transformação em G'
+        % v_{j-1}
+        \node[draw, circle, fill=blue, inner sep=2pt] (v1_e1) at (-1.5, -0.5) {};
+        \node[draw, circle, fill=blue, inner sep=2pt] (v1_e2) at (-1.5, -1.5) {};
+        \node[draw, circle, fill=blue, inner sep=3pt, label=above:{(v\(_{j-1}\), e\(_1\))}] (v1_e3) at (-0.5, -0.5) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e1) at (-2.25, 1.5) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e2) at (-2.5, -2.75) {};
+        \draw (v1_e1) -- (v1_e2) -- (v1_e3) -- cycle; % Triângulo de v_{j-1}
+        \draw (v1_e1) -- (v1_e3); % Aresta adicional no triângulo
     
+        % v_j
+        \node[draw, circle, fill=green, inner sep=3pt, label=below:{(v\(_j\), e\(_1\))}] (v2_e3) at (0.5, -0.5) {};
+        \node[draw, circle, fill=green, inner sep=3pt, label=below right:{(v\(_j\), e\(_3\))}] (v2_e4) at (1.5, -1.5) {};
+        \node[draw, circle, fill=green, inner sep=3pt, label=above:{(v\(_j\), e\(_2\))}] (v2_e6) at (2.5, 0) {};
+        \node[draw, circle, fill=red, inner sep=2pt] (e4) at (0.75, -2.5) {};
+        \draw (v2_e3) -- (v2_e4);
+        \draw[line width=0.7mm] (v2_e4) -- (v2_e6);
+        \draw[line width=0.7mm] (v2_e3) -- (v2_e4);
+        \draw (v2_e3) -- (v2_e6); % Aresta adicional no triângulo
+    
+        % v_{j+1}
+        \node[draw, circle, fill=yellow, inner sep=3pt, label=above:{(v\(_{j+1}\), e\(_2\))}] (v3_e6) at (3.5, 0.5) {};
+        \node[draw, circle, fill=yellow, inner sep=2pt] (v3_e7) at (4.5, -0.75) {};
+        \node[draw, circle, fill=yellow, inner sep=2pt] (v3_e8) at (5.0, 1) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e7) at (4.25, -2) {};
+        \node[draw, circle, fill=black, inner sep=0pt] (e8) at (6.25, 1) {};
+        \draw (v3_e6) -- (v3_e7) -- (v3_e8) -- cycle; % Triângulo de v_{j+1}
+        \draw (v3_e6) -- (v3_e8); % Aresta adicional no triângulo
 
+    
+        % Conexões entre vértices (v, e) e (y, e) (arestas compartilhadas)
+        \draw[line width=0.7mm] (v1_e3) -- (v2_e3); % Aresta compartilhada entre v_{j-1} e v_j
+        \draw[line width=0.7mm] (v2_e6) -- (v3_e6); % Aresta compartilhada entre v_j e v_{j+1}
+    
+        % Conexões específicas para as novas arestas
+        \draw (e4) -- (v2_e4);
+        \draw (e2) -- (v1_e2);
+        \draw (e1) -- (v1_e1);
+        \draw (e7) -- (v3_e7);
+        \draw (e8) -- (v3_e8);
+    
+        % Label
+        \node at (1, -3.5) {Transformação de \(v_{j-1}, v_j, v_{j+1}\) em \(G'\)};
+    \end{tikzpicture}
+\end{center}    
 
 
 Pode-se verificar que o caminho \( P' \) em \( G' \) assim formado é Hamiltoniano.

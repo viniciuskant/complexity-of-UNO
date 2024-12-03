@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=latex 2024.12.2)  3 DEC 2024 18:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=latex 2024.12.2)  3 DEC 2024 19:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -606,17 +606,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [1
 
-] (./capitulos/introducao.tex
-Overfull \hbox (39.05083pt too wide) in paragraph at lines 26--27
-[]\OT1/cmr/m/n/10 Seja $\OML/cmm/m/it/10 C$ \OT1/cmr/m/n/10 o con-junto de to-das as car-tas, onde $\OML/cmm/m/it/10 C \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 c; t\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 c \OMS/cmsy/m/n/10 2 f\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OMS/cmsy/m/n/10 g\OML/cmm/m/it/10 ; t \OMS/cmsy/m/n/10 2 f\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 9\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 12\OMS/cmsy/m/n/10 gg$\OT1/cmr/m/n/10 . 
- []
-
-) (./capitulos/modelo.tex [2]
+] (./capitulos/introducao.tex [2]) (./capitulos/modelo.tex
 Overfull \hbox (1.81058pt too wide) in paragraph at lines 24--25
 |  \OT1/cmr/m/n/10 Con-si-dere o se-guinte exem-plo de jogo de UNO de ape-nas uma pes-soa, com $\OML/cmm/m/it/10 C \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3)\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3)\OML/cmm/m/it/10 ; [] 
  []
 
-(./grafos/uno1graph.tps) [3] [4] (./grafos/triangle_gadget.tps) [5] (./grafos/possible_tours.tps)) [6] (./analise_uno.bbl) [7] (./analise_uno.aux)
+(./grafos/uno1graph.tps) [3] [4] (./grafos/triangle_gadget.tps) [5] [6] (./grafos/possible_tours.tps)) [7] (./analise_uno.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -625,12 +620,12 @@ Package rerunfilecheck Info: File `analise_uno.out' has not changed.
 (rerunfilecheck)             Checksum: 5AA08EA84C4A5A5FEFCAA5303D85C782;747.
  ) 
 Here is how much of TeX's memory you used:
- 23725 strings out of 476057
- 450798 string characters out of 5793092
+ 23708 strings out of 476057
+ 450487 string characters out of 5793092
  1950184 words of memory out of 5000000
- 45456 multiletter control sequences out of 15000+600000
+ 45442 multiletter control sequences out of 15000+600000
  567956 words of font info for 75 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 102i,13n,107p,987b,695s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,13n,107p,987b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on analise_uno.dvi (7 pages, 97132 bytes).
+Output written on analise_uno.dvi (7 pages, 105596 bytes).

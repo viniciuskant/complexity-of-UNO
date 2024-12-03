@@ -1,12 +1,16 @@
 \section{Introdução}
 
-\hspace*{3em} Para essa análise nos restringiremos a analisar apenas o uno com uma pessoa, que iremos modelar como um grafo bipartido. Um grafo bipartido é um grafo cujos vértices podem ser divididos em dois conjuntos disjuntos, de modo que não há arestas entre vértices do mesmo conjunto.
+\hspace*{3em} Para essa análise nos restringiremos a analisar apenas o UNO com uma pessoa, que iremos modelar a partir de um grafo bipartido. Para facilitar o entendimento, iremos dar uma visão geral do passo a passo da prova da NP-completude do UNO-1. Partiremos de um grafo bipartido (cor e número), onde as arestas representam as cartas. Transformaremos esse grafo em um grafo de linha (assim, as arestas passam a ser representadas por vértices).
 
-\hspace*{2em} Para isso iremos primeiro definir uma notação matemática para o jogo.
+\hspace*{3em} No grafo de linha, os vértices correspondem às cartas do jogo, e duas cartas serão conectadas por uma aresta caso sejam jogáveis consecutivamente de acordo com as regras do UNO (mesma cor ou mesmo número). Em seguida, mostraremos como a resolução do problema UNO-1 está relacionada a encontrar um caminho hamiltoniano nesse grafo de linha.
+
+\hspace*{3em} A partir daí, provaremos que o problema de decidir se existe uma sequência válida de cartas para vencer o UNO-1 é NP-completo, utilizando uma redução de um problema clássico já conhecido como NP-completo.
+
+\hspace*{2em} Para isso iremos primeiro definir uma notação matemática para o jogo, que permitirá essa modelagem.
 
 \subsection{Notação}
     \subsubsection*{Cartas}
-        \hspace*{3em} No jogo cada carta é representada por um par ordenado $(c, t)$, onde $c$ é a cor da carta e $t$ é o tipo da carta. Onde $c \in \{0, 1, 2, 3\}$ e $t \in \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}$, onde $0$ é a cor vermelha, $1$ é a cor amarela, $2$ é a cor verde e $3$ é a cor azul. E $0$ é a carta 1, $1$ é a carta 2, $2$ é a carta 3, ..., onde $9$ é a carta de bloqueio, $10$ é a carta pular, $11$ é a carta inverter, e $12$ é a carta +2.
+        \hspace*{3em} No jogo cada carta é representada por um par ordenado $(c, n)$, onde $c$ é a cor da carta e $n$ é o número da carta. Onde $c \in \{0, 1, 2, 3\}$, onde $0$ é a cor vermelha, $1$ é a cor amarela, $2$ é a cor verde e $3$ é a cor azul, e $n \in \{0, 1, 2, 3, 4, 5, 6, 7, 8\}$, tal que $0$ é a carta 1, $1$ é a carta 2, $2$ é a carta 3, ... e $8$ e 9.
 
     \subsubsection*{Jogada}
         \hspace*{3em} Em uma determinada jogada, o jogador pode jogar uma carta que seja igual à carta que está na mesa, ou seja, que tenha a mesma cor ou o mesmo tipo. Caso contrário, ele pode comprar uma carta do monte e, se a carta comprada puder ser jogada, ele pode jogá-la.
@@ -14,16 +18,16 @@
     \subsubsection*{Descarte}
         \hspace*{3em} Quando um jogador descarta uma carta, ele deve colocá-la no topo da pilha de descarte. A carta no topo da pilha de descarte determina as regras para a próxima jogada. Se a pilha de descarte estiver vazia, qualquer carta pode ser jogada para iniciar a pilha.
 
-        \hspace*{2em} Em outras palavras, uma carta $x_i = (c, t)$ pode ser jogada se a carta $x_{i-1} = (c', t')$ no topo da pilha de descarte satisfizer uma das seguintes condições:
+        \hspace*{2em} Em outras palavras, uma carta $x_i = (c, n)$ pode ser jogada se a carta $x_{i-1} = (c', n')$ no topo da pilha de descarte satisfizer uma das seguintes condições:
         \begin{itemize}
-            \item $(c = c') \lor  (t = t')$
+            \item $(c = c') \lor  (n = n')$
         \end{itemize}
 
         \subsubsection*{Regras}
             \hspace*{3em} Vamos definir as regras do jogo usando a seguinte notação matemática:
             
             \begin{itemize}
-                \item Seja $C$ o conjunto de todas as cartas, onde $C = \{(c, t) \mid c \in \{0, 1, 2, 3\}, t \in \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}\}$.
+                \item Seja $C$ o conjunto de todas as cartas, onde $C = \{(c, n) \mid c \in \{0, 1, 2, 3\}, n \in \{0, 1, 2, 3, 4, 5, 6, 7, 8\}\}$.
                 \item Seja $D$ a pilha de descarte, onde $D = [d_1, d_2, \ldots, d_n]$ e $d_i \in C$ para todo $i$.
                 \item Seja $M$ o monte de compra, onde $M = [m_1, m_2, \ldots, m_k]$ e $m_i \in C$ para todo $i$.
                 \item Seja $P$ o conjunto de jogadores, onde $P = \{p_1, p_2, \ldots, p_j\}$.

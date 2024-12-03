@@ -1,20 +1,12 @@
 # Fdb version 4
-["bibtex analise_uno"] 1733260559.22218 "analise_uno.aux" "analise_uno.bbl" "analise_uno" 1733260676.47786 0
-  "./referencias.bib" 1733191411.67891 763 37f6111aea09ae1d9b6950fef2b3b8ff ""
-  "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1727349926 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "analise_uno.aux" 1733260675.89318 1879 866abfab18a51ffd38158242d3961b62 "latex"
-  (generated)
-  "analise_uno.bbl"
-  "analise_uno.blg"
-  (rewritten before read)
-["dvips"] 1733260676.12628 "analise_uno.dvi" "analise_uno.ps" "analise_uno" 1733260676.48277 0
-  "analise_uno.dvi" 1733260675.89651 97132 c41a4a8b78705c9a39cf903f83367b3d "latex"
+["dvips"] 1733266619.99972 "analise_uno.dvi" "analise_uno.ps" "analise_uno" 1733266620.32021 0
+  "analise_uno.dvi" 1733266619.93779 105596 d5a323e6341eabd742d8efeee6c972d0 "latex"
   (generated)
   "analise_uno.ps"
   (rewritten before read)
-["latex"] 1733260674.78872 "/home/kant/unicamp/semestres/semestre_6/mc558/projeto/.latex_analise_uno/analise_uno.tex" "analise_uno.dvi" "analise_uno" 1733260676.47807 0
+["latex"] 1733266618.93449 "/home/kant/unicamp/semestres/semestre_6/mc558/projeto/.latex_analise_uno/analise_uno.tex" "analise_uno.dvi" "analise_uno" 1733266620.31787 0
   "/home/kant/texmf/fonts/tfm/public/ascgrp/ascgrp.tfm" 1733190052.72526 448 9a1f3a95c3a7e2681aa6eefcf410b7ac ""
-  "/home/kant/unicamp/semestres/semestre_6/mc558/projeto/.latex_analise_uno/analise_uno.tex" 1733191385.55887 1157 31612c9780e65d305047d455762f2ebb ""
+  "/home/kant/unicamp/semestres/semestre_6/mc558/projeto/.latex_analise_uno/analise_uno.tex" 1733265248.09561 1163 ba314cc643b2f72cf60d11ca30219cc7 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1727349926 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1727349926 1004 54797486969f23fa377b128694d548df ""
@@ -168,13 +160,12 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727349926 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/web2c/pdftex/latex.fmt" 1733189250 7113572 3e8ab93155bc4e12d8c939dc0363dba2 ""
-  "analise_uno.aux" 1733260675.89318 1879 866abfab18a51ffd38158242d3961b62 "latex"
-  "analise_uno.bbl" 1733260559.28637 559 ee49383e516dcdce0d1fe8e71142c6d5 "bibtex analise_uno"
-  "analise_uno.out" 1733260675.89651 747 5aa08ea84c4a5a5fefcaa5303d85c782 "latex"
-  "analise_uno.tex" 1733191385.55887 1157 31612c9780e65d305047d455762f2ebb ""
-  "analise_uno.toc" 1733260675.89651 489 4f3d5485caf89c1d00cf3e560f18f8e5 "latex"
-  "capitulos/introducao.tex" 1733195340.4078 3481 9c25352e1f60af97110716199f743367 ""
-  "capitulos/modelo.tex" 1733260674.45651 19990 3855a11813f3d94dfe45d5de21a3c991 ""
+  "analise_uno.aux" 1733266619.93779 1795 8e313922fdaac59fa73b2bfaa9275af8 "latex"
+  "analise_uno.out" 1733266619.93779 747 5aa08ea84c4a5a5fefcaa5303d85c782 "latex"
+  "analise_uno.tex" 1733265248.09561 1163 ba314cc643b2f72cf60d11ca30219cc7 ""
+  "analise_uno.toc" 1733266619.93779 489 a3a9c67e0fab832c75ae64568a8a8cd8 "latex"
+  "capitulos/introducao.tex" 1733266618.69779 4147 234cb82445af30df61cffacf6f2920ed ""
+  "capitulos/modelo.tex" 1733265829.39652 22208 143f137b62eaf81d722331d8115a90e6 ""
   "grafos/possible_tours.tps" 1385521724 1603 ca9b3fb7d58d461302075fc0419a6bba ""
   "grafos/triangle_gadget.tps" 1385521718 611 f02657db21e1d943b87636ae72d7a5a5 ""
   "grafos/uno1graph.tps" 1733231484.34293 715 08cfb8cb908061909a7f6468aa124f78 ""
@@ -185,8 +176,8 @@
   "analise_uno.out"
   "analise_uno.toc"
   (rewritten before read)
-["ps2pdf"] 1733260676.24226 "analise_uno.ps" "analise_uno.pdf" "analise_uno" 1733260676.48286 0
-  "analise_uno.ps" 1733260676.23651 531777 eda7d6400701b2d0eaaf67a0a12b743a "dvips"
+["ps2pdf"] 1733266620.10112 "analise_uno.ps" "analise_uno.pdf" "analise_uno" 1733266620.32027 0
+  "analise_uno.ps" 1733266620.09446 527531 4e85650d93b0250e100adc62afec8340 "dvips"
   (generated)
   "analise_uno.pdf"
   (rewritten before read)
