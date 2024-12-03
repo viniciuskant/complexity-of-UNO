@@ -1,0 +1,381 @@
+%%BoundingBox: 24 638 234 762
+%%Title: dp_example
+%%CreationDate: Wed Nov 27 12:22:21 2013
+%%Creator: tgif2tex version 2.05 (Original:  Tgif-4.1.42-QPL written by William Chia-Wei Cheng (bill.cheng@acm.org))
+%%ProducedBy: (unknown)
+%%Orientation: Portrait
+%%Pages: 1
+%%DocumentFonts: (atend)
+%%DocumentPaperSizes: a4
+%%EndComments
+%%BeginProlog
+
+/tgifdict 55 dict def
+tgifdict begin
+
+/tgifellipsedict 6 dict def
+tgifellipsedict /mtrx matrix put
+
+/TGEL % tgifellipse
+ { tgifellipsedict begin
+      /yrad exch def
+      /xrad exch def
+      /y exch def
+      /x exch def
+      /savematrix mtrx currentmatrix def
+      x y translate
+      xrad yrad scale
+      0 0 1 0 360 arc
+      savematrix setmatrix
+   end
+ } def
+
+/tgifarrowtipdict 8 dict def
+tgifarrowtipdict /mtrx matrix put
+
+/TGAT % tgifarrowtip
+ { tgifarrowtipdict begin
+      /dy exch def
+      /dx exch def
+      /h exch def
+      /w exch def
+      /y exch def
+      /x exch def
+      /savematrix mtrx currentmatrix def
+      x y translate
+      dy dx atan rotate
+      0 0 moveto
+      w neg h lineto
+      w neg h neg lineto
+      savematrix setmatrix
+   end
+ } def
+
+/TGMAX
+ { exch dup 3 1 roll exch dup 3 1 roll gt { pop } { exch pop } ifelse
+ } def
+/TGMIN
+ { exch dup 3 1 roll exch dup 3 1 roll lt { pop } { exch pop } ifelse
+ } def
+/TGSW { stringwidth pop } def
+
+/bd { bind def } bind def
+
+/GS { gsave } bd
+/GR { grestore } bd
+/NP { newpath } bd
+/CP { closepath } bd
+/CHP { charpath } bd
+/CT { curveto } bd
+/L { lineto } bd
+/RL { rlineto } bd
+/M { moveto } bd
+/RM { rmoveto } bd
+/S { stroke } bd
+/F { fill } bd
+/TR { translate } bd
+/RO { rotate } bd
+/SC { scale } bd
+/MU { mul } bd
+/DI { div } bd
+/DU { dup } bd
+/NE { neg } bd
+/AD { add } bd
+/SU { sub } bd
+/PO { pop } bd
+/EX { exch } bd
+/CO { concat } bd
+/CL { clip } bd
+/EC { eoclip } bd
+/EF { eofill } bd
+/IM { image } bd
+/IMM { imagemask } bd
+/ARY { array } bd
+/SG { setgray } bd
+/RG { setrgbcolor } bd
+/SD { setdash } bd
+/W { setlinewidth } bd
+/SM { setmiterlimit } bd
+/SLC { setlinecap } bd
+/SLJ { setlinejoin } bd
+/SH { show } bd
+/FF { findfont } bd
+/MS { makefont setfont } bd
+/AR { arcto 4 {pop} repeat } bd
+/CURP { currentpoint } bd
+/FLAT { flattenpath strokepath clip newpath } bd
+/TGSM { tgiforigctm setmatrix } def
+/TGRM { savematrix setmatrix } def
+
+end
+
+%%EndProlog
+%!
+%%BoundingBox: 24 638 234 762
+%%BeginSetup
+%%PaperSize: a4
+%%BeginPaperSize: a4
+%%EndPaperSize
+%%EndSetup
+%%Page: 1 1
+
+%%PageBoundingBox: 22 625 321 763
+tgifdict begin
+/tgifsavedpage save def
+
+1 SM
+1 W
+
+0 SG
+
+72 0 MU 72 11.695 MU TR
+72 128 DI 100.000 MU 100 DI DU NE SC
+
+GS
+
+/tgiforigctm matrix currentmatrix def
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 4] 0 SD
+   NP
+      320 154 M
+      320 349 L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 4] 0 SD
+   NP
+      117 176 M
+      352 176 L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+
+% OVAL
+0 SG
+NP 208 298 8 8 TGEL F
+GS
+   GS
+      NP 208 298 8 8 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0.097 0.581 1.000 RG
+NP 320 176 8 8 TGEL F
+GS
+   GS
+      NP 320 176 8 8 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      96 336 M
+      0 262 atan DU cos 8.000 MU 358 exch SU
+      exch sin 8.000 MU 336 exch SU L
+   TGSM
+   1 W
+   S
+GR
+GS
+   TGSM
+   NP
+      358 336 8.000 3.000 262 0 TGAT
+   1 SG CP F
+   0 SG
+   NP
+      358 336 8.000 3.000 262 0 TGAT
+   CP F
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 4] 0 SD
+   NP
+      151 155 M
+      151 351 L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+
+
+
+
+
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 4] 0 SD
+   NP
+      208 154 M
+      208 348 L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 4] 0 SD
+   NP
+      253 153 M
+      253 351 L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+
+% POLY/OPEN-SPLINE
+0.097 0.581 1.000 RG
+GS
+   [12 4] 0 SD
+   NP
+      151 176 M
+      320 176 L
+   TGSM
+   5 W
+   S
+   [] 0 SD
+   1 W
+GR
+
+% POLY/OPEN-SPLINE
+0.097 0.581 1.000 RG
+GS
+   [12 4] 0 SD
+   NP
+      320 176 M
+      320 224 L
+   TGSM
+   5 W
+   S
+   [] 0 SD
+   1 W
+GR
+
+% OVAL
+0 SG
+NP 320 224 8 8 TGEL F
+GS
+   GS
+      NP 320 224 8 8 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      207 298 M
+      209.67 306.67 212.83 311.67 216.50 313.00 CT
+      220.17 314.33 223.83 314.00 227.50 312.00 CT
+      231.17 310.00 233.33 307.33 234.00 304.00 CT
+      234.67 300.67 236.17 297.50 238.50 294.50 CT
+      240.83 291.50 243.83 290.50 247.50 291.50 CT
+      251.17 292.50 254.33 294.33 257.00 297.00 CT
+      259.67 299.67 262.67 301.50 266.00 302.50 CT
+      269.33 303.50 272.17 302.50 274.50 299.50 CT
+      276.83 296.50 278.00 293.33 278.00 290.00 CT
+      278.00 286.67 278.67 283.67 280.00 281.00 CT
+      281.33 278.33 283.33 276.50 286.00 275.50 CT
+      288.67 274.50 291.33 274.83 294.00 276.50 CT
+      296.67 278.17 299.33 279.83 302.00 281.50 CT
+      304.67 283.17 307.67 283.00 311.00 281.00 CT
+      314.33 279.00 315.50 276.00 314.50 272.00 CT
+      313.50 268.00 313.17 264.33 313.50 261.00 CT
+      313.83 257.67 315.50 255.00 318.50 253.00 CT
+      321.50 251.00 325.33 249.67 330.00 249.00 CT
+      334.67 248.33 338.33 246.67 341.00 244.00 CT
+      343.67 241.33 344.67 238.00 344.00 234.00 CT
+      343.33 230.00 341.33 227.17 338.00 225.50 CT
+      334.67 223.83 329.67 223.67
+      323 225 CT
+   TGSM
+   3 W
+   S
+   1 W
+GR
+
+
+
+
+% OVAL
+0 SG
+NP 253 272 8 8 TGEL F
+GS
+   GS
+      NP 253 272 8 8 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   250 273 TR
+   [-1.000 0.000 -0.000 -1.000 5 -5] CO
+   250 NE 273 NE TR
+GS
+   NP
+      351 366 M
+      353.00 355.33 352.50 348.67 349.50 346.00 CT
+      346.50 343.33 342.83 342.67 338.50 344.00 CT
+      334.17 345.33 330.50 345.67 327.50 345.00 CT
+      324.50 344.33 322.17 342.50 320.50 339.50 CT
+      318.83 336.50 317.83 333.00 317.50 329.00 CT
+      317.17 325.00 317.00 321.83 317.00 319.50 CT
+      317.00 317.17 316.00 314.17 314.00 310.50 CT
+      312.00 306.83 309.00 304.50 305.00 303.50 CT
+      301.00 302.50 297.50 302.67 294.50 304.00 CT
+      291.50 305.33 287.67 306.17 283.00 306.50 CT
+      278.33 306.83 274.33 304.67 271.00 300.00 CT
+      267.67 295.33 266.33 291.00 267.00 287.00 CT
+      267.67 283.00 266.83 279.67 264.50 277.00 CT
+      262.17 274.33 257.33 273.33
+      250 274 CT
+   TGSM
+   3 W
+   S
+   1 W
+GR
+GR
+
+% OVAL
+0 SG
+NP 151 176 8 8 TGEL F
+GS
+   GS
+      NP 151 176 8 8 TGEL
+      S
+   GR
+GR
+
+
+GR
+tgifsavedpage restore
+end
+showpage
+%MatchingCreationDate: Wed Nov 27 12:22:21 2013

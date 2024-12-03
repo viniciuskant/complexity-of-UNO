@@ -1,19 +1,27 @@
 \documentclass{article}
+
+% Configuração de margens
+\usepackage[a4paper, margin=1in]{geometry}
+
+% Idioma e codificação
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
+
+% Pacotes adicionais
 \usepackage{hyperref}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{amsmath}
+\usepackage{amsmath, amsthm, amssymb}
 \usepackage{tikz}
 \usepackage{tcolorbox}
-\usepackage{amsthm}
 \usepackage{graphicx}
-\usepackage{amsthm}
 \usepackage{color}
+\usepackage{ascmac}
+\usepackage{filecontents}
 
+% Estilo de teoremas e resultados matemáticos
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
 
+% Configuração de links
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -22,11 +30,12 @@
     citecolor=black,
 }
 
+% Título e autores
 \title{Análise da Complexidade do jogo UNO}
 \author{
-    Henrique Parede de Souza - \\
-    Pedro Brasil Barroso - \\
-    Pedro Damasceno Vasconcellos -  \\
+    Henrique Parede de Souza \\ 
+    Pedro Brasil Barroso \\ 
+    Pedro Damasceno Vasconcellos \\ 
     Vinicius Patriarca Miranda Miguel - RA260721
 }
 \date{\today}
@@ -35,14 +44,16 @@
 
 \maketitle
 
+% Sumário
 \renewcommand{\contentsname}{Sumário}
 \tableofcontents
 \newpage
 
+% Capítulos
 \input{capitulos/introducao.tex}
-
 \input{capitulos/modelo.tex}
 
+% Bibliografia
 \newpage
 \bibliographystyle{plain}
 \bibliography{referencias}
