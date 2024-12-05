@@ -6,12 +6,12 @@ def sai(variaveis, adjacencia, u):
     ''' Retorna lista com as arestas (variaveis) que saem de u '''
     return [variaveis[u][v] for v in adjacencia[u]]
 
-def entra(variaveis, adjacencia, u):
+def entra(variaveis, adjacencia, v):
     ''' Retorna lista com as arestas (variaveis) que entram em u '''
     arestas_saem = []
     for u in adjacencia:
-        if u in adjacencia[u]:
-            arestas_saem.append(variaveis[u][u])
+        if v in adjacencia[u]:
+            arestas_saem.append(variaveis[u][v])
     return arestas_saem
 
 def ham_path(vertices, S, T, adjacencia):
