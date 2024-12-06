@@ -1,0 +1,5 @@
+UNO-1 - Programas:
+- `grafos_cubicos.py`: Dado um número par de vértices, gera um grafo cúbico aleatório, além de seu respectivo json (`grafo_cubico.json`) e plot
+- `reducao_completa.py`: Dado um número par de vértices, gera um grafo cúbico aleatório (tal como em `grafos_cubicos.py`), transforma-o em um grafo onde cada vértice é transformado em um triângulo (passo da redução de HP-C para UNO-1), gerando o json (`grafo_transformado.json`) e o plot. Em seguida, gera uma entrada equivalente para UNO-1 (`sequencia_grafo.txt`) e plota com cores e números das cartas.
+- `reducao.py`: Recebe um grafo cúbico e um caminho dentro desse grafo e os imprime/plota. Em seguida, verifica se o grafo é cúbico e o caminho é hamiltoniano. Depois, reduz o grafo para o grafo do UNO-1 e o caminho para um caminho de UNO-1 e os imprime/plota. Por fim, verifica se esse caminho é hamiltoniano. Os exemplos são lidos da pasta `HPC_examples`.
+- `pli.py`: Recebe o grafo em `grafo_cubico.json` e resolve o PLI associado, imprimindo no terminal o problema e as arestas que foram selecionadas (solução). Por fim, plota a solução e a exporta para `grafo_cubico_com_destaques.png`.
