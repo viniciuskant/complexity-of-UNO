@@ -1,0 +1,92 @@
+\section{Formulação do PLI} 
+
+Iremos propor um PLI para o problema origem da redução, i.e., dado um grafo $G=(V,E)$, desejamos descobrir se existe um caminho hamiltoniano em $G$. Para isso, podemos modelar o problema como um PLI da seguinte forma:
+
+Primeiro, crie um grafo direcionado $G'=(V \cup \{s, t\}, E')$, onde $E' = E \cup \{(s, v) \mid v \in V\} \cup \{(v, t) \mid v \in V\}$, i.e, dado $(u,v) \in E$, existem duas arestas direcionadas $(u,v)$ e $(v,u)$ em $G'$. Além disso, $s$ incide em todos os vértices de $V$, os quais, por sua vez, incidem em $t$.
+
+É evidente que, se $G'$ tiver um caminho hamiltoniano, ele deve iniciar em $s$ e terminar em $t$. Portanto, se $G'$ tiver um caminho hamiltoniano $P=(s, v_1, v_2, \ldots, v_{|V|}, t)$, então $G$ tem um caminho hamiltoniano $P'=(v_1, v_2, \ldots, v_{|V|})$.
+
+Além disso, se $G$ tiver um caminho hamiltoniano $P'=(v_1, v_2, \ldots, v_{|V|})$, então $G'$ tem um caminho hamiltoniano $P=(s, v_1, v_2, \ldots, v_{|V|}, t)$. Portanto, se $G'$ não tiver um caminho hamiltoniano, $G$ também não o tem. Assim, conclui-se que $G$ tem um caminho hamiltoniano se, e somente se, $G'$ tem um caminho hamiltoniano, então os problemas são equivalentes.
+
+Diante disso, podemos modelar o problema de encontrar um caminho hamiltoniano em $G$ como o seguinte PLI:
+
+\subsection{Variáveis}
+
+$x_{ij} =
+    \begin{cases} 
+        1, & \text{se a aresta } (i, j) \in E' \text{ está no caminho}, \\
+        0, & \text{caso contrário}.
+    \end{cases}
+$
+
+\subsection{PLI:}
+
+\begin{equation*}
+    \text{max } \sum_{(i, j) \in E'} x_{ij}
+\end{equation*}
+\begin{align*}
+    \text{s.a.:} \nonumber \\
+    \sum_{(s, j) \in \delta^+(s)}x_{sj} = 1& \\
+    \sum_{(i, t) \in \delta^-(s)}x_{it} = 1& \\
+    \sum_{(i, j) \in \delta^+(i)}x_{ij} = 1&, \forall v \in V \\
+    \sum_{(i, j) \in \delta^-(i)}x_{ji} = 1&, \forall v \in V \\
+    \sum_{(i, j) \in E}x_{ij} \leq |S| - 1&, \forall S \subseteq V, |S| \geq 2\\
+    x_{ij} \in \{0, 1\}&, \forall (i, j) \in E'
+\end{align*}
+
+
+\subsection{Explicação}
+
+Desejamos maximizar o número de arestas no caminho, de forma que ele contenha o maior número de vértices possíveis. Para isso, a função objetivo é a soma de todas as variáveis $x_{ij}$, que representam as arestas que estão no caminho.
+
+A primeira restrição garante que apenas uma aresta incide em $s$, ou seja, o caminho hamiltoniano começa em $s$. A segunda restrição garante que apenas uma aresta incide em $t$, ou seja, o caminho hamiltoniano termina em $t$. 
+
+Já a terceira e a quarta restrição garantem que cada vértice $v \in V$ tem exatamente uma aresta incidindo e uma aresta saindo dele, respectivamente. Ademais, a quinta restrição garante que o caminho hamiltoniano não possui subciclos (prevenção de subrotas), ou seja, não passa por um mesmo vértice mais de uma vez. Por fim, a última restrição garante que as variáveis são binárias.
+
+
+\subsection{Prova de corretude}
+
+Para demonstrar a correção, provaremos que um caminho $P$ em $G$ é hamiltoniano se, e somente se, existe uma solução viável do PLI com valor objetivo $|V| + 1$.
+
+($\implies$) Dado um caminho hamiltoniano $P=(v_1, v_2, \ldots, v_{k})$ em $G$, seja $P'= (s, v_1, v_2, \ldots, v_{k}, t)$ o caminho correspondente em $G'$. Construiremos uma solução para o PLI a partir de $P'$:
+
+
+\begin{equation*}
+    x_{ij} =
+    \begin{cases} 
+        1, & \text{se } (v_i, v_j) \text{ é uma aresta em } P', \\
+        0, & \text{caso contrário}.
+    \end{cases}
+\end{equation*}
+
+Note que, em $P'$, como $s$ e $t$ são as extremidades do caminho, apenas uma aresta "sai" de $s$ e apenas uma incide em $t$, satisfazendo as duas primeiras restrições. Além disso, cada vértice $v_{i} \notin \{s, t\} $ deve ter arestas $(v_{i-1}, v_i)$, $(v_i, v_{i+1})$ em $P'$. Como $P'$ é um caminho, não há repetição de vértices, e portanto só existe uma aresta que incide em $v_{i}$ e outra que sai de $v_{i}$, satisfazendo a terceira e a quarta restrições.
+Além disso, o caminho não possui subciclos, satisfazendo a quinta restrição. 
+
+O número de arestas dessa solução será:
+
+\begin{equation*}
+    \sum_{(i, j) \in P'} x_{ij} = \sum_{(i, j) \in P'} x_{ij} + \sum_{(i, j) \notin P'} 0 = \sum_{(i, j) \in P'} x_{ij} + \sum_{(i, j) \notin P'} x_{ij} = \sum_{(i, j) \in E'} x_{ij} = |V| + 1
+\end{equation*}
+
+O número de arestas é igual a $|V| + 1$ pois $P'$ passa por todos os $|V| + 2$ vértices de $G'$. Portanto, a solução construída é viável.
+
+($\impliedby$) Dada uma solução viável $X$ do PLI que aponta as arestas $(v_i, v_j)$ selecionadas por $x_{ij} = 1$, construiremos um caminho hamiltoniano $P$ em $G$ a partir de $X$:
+
+\[
+    P' = (s, v_1, v_2, \dots, v_k, t)\text{, onde } v_i, v_{i+1} \in P' \text{ se } x_{i(i+1)} = 1
+\]
+\[
+    P = P' - \{s, t\}
+\]
+
+Para que P seja um caminho hamiltoniano, é necessário que $P'$ seja um caminho em $G'$ que comece em $s$ e termine em $t$, visitando todos os vértices. Devido às restrições, sabemos que $P'$ é um caminho, i.e., não há repetição de vértices (ciclos são impedidos devido à quinta restrição) e cada vértice que não é extremidade tem exatamente uma aresta incidindo e uma saindo dele. Em contrapartida, as extremidades $s$ e $t$ possuem apenas uma aresta saindo e incidindo nelas, respectivamente. Portanto, $P'$ é um caminho hamiltoniano em $G'$.
+
+Agora, é necessário provar que o número de arestas selecionadas é o mesmo:
+
+\begin{equation*}
+    \sum_{(i, j) \in E'} x_{ij} = \sum_{(i, j) \in E' \land x_{ij} = 1 } 1 +  \sum_{(i, j) \in E' \land x_{ij} = 0 } 0 = \sum_{(i, j) \in E' \land x_{ij} = 1 } 1 = \sum_{(i, j) \in P' } x_{ij} = |V| + 1
+\end{equation*}
+
+Como o caminho é hamiltoniano se e somente se o PLI tiver uma solução com valor objetivo $|V| + 1$, finalizamos a demonstração de que o PLI é correto.
+
+\subsection{Solução para pequena instância}

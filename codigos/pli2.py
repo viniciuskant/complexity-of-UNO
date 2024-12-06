@@ -1,7 +1,3 @@
-'''
-    Resolução do problema do caminho hamiltoniano em um grafo cúbico
-'''
-
 from pulp import *
 import json
 from itertools import combinations
@@ -77,26 +73,66 @@ def ham_path(vertices, S, T, adjacencia):
         if (variavel.varValue > 0):
             print(f'  {variavel.name} = {variavel.varValue}')
 
+    return problema.variables()
+import networkx as nx
+import matplotlib.pyplot as plt
+import json
+
+def plotar_grafo_com_destaques(adjacencia, arestas_destacadas):
+    ''' Plota o grafo com arestas destacadas em vermelho '''
+    G = nx.DiGraph()
+
+    # Adiciona arestas ao grafo
+    for u, vizinhos in adjacencia.items():
+        for v in vizinhos:
+            G.add_edge(u, v)
+
+    # Cria lista de arestas destacadas e não destacadas
+    edges = list(G.edges)
+    edge_colors = ['red' if edge in arestas_destacadas or edge[::-1] in arestas_destacadas else 'gray' for edge in edges]
+
+    # Desenha o grafo
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, node_size=500, node_color='lightblue', font_size=10, font_weight='bold', edge_color=edge_colors)
+    plt.show()
+    plt.savefig("grafo_cubico_com_destaques.png")
+
 def main():
-    # leitura do grafo
+    # Leitura do grafo
     with open("grafo_cubico.json", "r") as file:
         grafo = json.load(file)
     n_vertices = grafo["n_vertices"]
     n_arestas = grafo["n_arestas"]
     adjacencia = {int(key): value for key, value in grafo["adjacencia"].items()}
 
-    # criacao dos vertices S e T
+    # Criação dos vértices S e T
     S = len(adjacencia)
     T = len(adjacencia) + 1
 
-    # S incide em todos os vertices originais, e todos incidem em T
+    # S incide em todos os vértices originais, e todos incidem em T
     for key in adjacencia.keys():
         adjacencia[key].append(T)
     adjacencia[S] = [i for i in range(n_vertices)]
 
-    # chamada do PL
+    # Chamada do PL
     vertices = list(range(n_vertices + 2))
-    ham_path(vertices, S, T, adjacencia)
+    variaveis = ham_path(vertices, S, T, adjacencia)
+
+    # Filtra arestas selecionadas
+    arestas_destacadas = []
+    for var in variaveis:
+        if var.varValue > 0:
+            # Extrai os vértices das variáveis do tipo x_u_v
+            u, v = map(int, var.name.split('_')[1:])
+            arestas_destacadas.append((u, v))
+
+    # Remove vértices artificiais
+    del adjacencia[S]
+    for key in adjacencia:
+        adjacencia[key] = [v for v in adjacencia[key] if v != T]
+
+    # Plota o grafo com arestas destacadas
+    plotar_grafo_com_destaques(adjacencia, arestas_destacadas)
 
 if __name__ == '__main__':
-    main()  
+    main()
